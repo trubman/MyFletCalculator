@@ -1,3 +1,4 @@
 
-def get_input(a):
-    pass
+def get_input():
+    incoming = input()
+    return incoming
