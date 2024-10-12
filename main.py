@@ -1,12 +1,18 @@
 import flet as ft
 from executor import Executor
+from flet_gui import CalculatorApp
 
 
 # CLI or FLET
-MODE = 'CLI'
+MODE = 'FLET'
 
 def main():
-    pass
+    page = ft.Page()
+    page.title = "Неправильный калькулятор"
+
+    calc = CalculatorApp()
+
+    page.add(calc)
 
 if __name__ == '__main__':
     if MODE == 'CLI':
