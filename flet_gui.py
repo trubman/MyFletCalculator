@@ -123,6 +123,8 @@ class CalculatorApp(ft.Container):
         exe.cleaned_incoming = self.result.value.strip()
         exe.set_splited_values()
         result = exe.do_math()
+        if not result:
+            result = 'Error'
         self.result.value = str(result)
         self.update()
 

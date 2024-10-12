@@ -67,3 +67,4 @@ class Executor:
                     Referent.do_output("¯\_(ツ)_/¯ - мои полномочия все...")
                     return False
 
+
