@@ -29,12 +29,24 @@ class TestClassifierWorks:
 
         assert expected == result_print
 
-    def test_check_input_func(self):
-        input_str = "2 + 2"
+    @pytest.mark.parametrize(
+        "input_str,expected", [
+            pytest.param('2 + 2', [2, '+', 2], id="[2, '+', 2]"),
+            pytest.param('2 - 2', [2, '-', 2], id="[2, '-', 2]"),
+            pytest.param('2 * 2', [2, '*', 2], id="[2, '*', 2]"),
+            pytest.param('2 / 2', [2, '/', 2], id="[2, '/', 2]"),
+            pytest.param('2 ** 2', [2, '**', 2], id="[2, '**', 2]"),
+            pytest.param('sqr 2', ['sqr', 2], id="['sqr', 2]"),
+            pytest.param('1 + 22 - 333 * 4444 ** 55555',
+                         [1, '+', 22, '-', 333, '*', 4444, '**', 55555],
+                         id="[1, '+', 22, '-', 333, '*', 4444, '**', 55555]"),
+        ]
+    )
+    def test_check_input_func(self, input_str, expected):
         cls = Classifier()
 
         result = cls.check_input(input_str)
 
-        assert result == [2, '+', 2]
+        assert result == expected
 
 
