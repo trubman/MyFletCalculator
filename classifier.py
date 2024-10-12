@@ -8,6 +8,7 @@ class Classifier:
             return incoming.strip().lower()
         else:
             Referent.do_output(f"{incoming} - не является строкой")
+            return False
 
     def check_input(self, cleaned_incoming):
 
@@ -31,7 +32,7 @@ class Classifier:
             return splited_incoming
         else:
             Referent.do_output(f"Выражение {cleaned_incoming} - недопустимо")
-
+            return False
 
 
 
