@@ -30,12 +30,12 @@ class Classifier:
                     operation_check = False
                 else:
                     splited_incoming[i] = op_dict[splited_incoming[i]]
-
+        print(splited_incoming)
         if len(splited_incoming) == 2 and splited_incoming[1] == 'square_root':
             splited_incoming = [splited_incoming[0], splited_incoming[1], 2]
         elif len(splited_incoming) == 2 and splited_incoming[0] == 'square_root':
             splited_incoming = [splited_incoming[0], splited_incoming[1], 2]
-
+        print(splited_incoming)
         if symbol_check and operation_check:
             return splited_incoming
         else:

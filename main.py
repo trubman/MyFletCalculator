@@ -6,12 +6,12 @@ from flet_gui import CalculatorApp
 # CLI or FLET
 MODE = 'FLET'
 
-def main():
-    page = ft.Page()
+def main(page: ft.Page):
     page.title = "Неправильный калькулятор"
-
+    page.window.width = 400
+    page.window.height = 660
+    page.window.resizable = False
     calc = CalculatorApp()
-
     page.add(calc)
 
 if __name__ == '__main__':
