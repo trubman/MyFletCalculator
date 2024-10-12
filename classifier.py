@@ -8,5 +8,6 @@ class Classifier:
             return incoming.strip().lower()
         else:
             Referent.do_output(f"{incoming} - не является строкой")
+            # self.do_clean_input(Referent.get_input())
 
 
