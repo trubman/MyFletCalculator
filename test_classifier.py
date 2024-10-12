@@ -35,6 +35,6 @@ class TestClassifierWorks:
 
         result = cls.check_input(input_str)
 
-        assert result == True
+        assert result == [2, '+', 2]
 
 
