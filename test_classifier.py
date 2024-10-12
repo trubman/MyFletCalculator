@@ -28,3 +28,13 @@ class TestClassifierWorks:
         result_print = capsys.readouterr().out
 
         assert expected == result_print
+
+    def test_check_input_func(self):
+        input_str = "2 + 2"
+        cls = Classifier()
+
+        result = cls.check_input(input_str)
+
+        assert result == True
+
+
