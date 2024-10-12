@@ -21,12 +21,15 @@ class Classifier:
 
         operation_check = True
         operations = ['+', '-', '*', '/', '**', 'sqr']
+        op_dict = {'+': 'add', '-': 'substract', '*': 'multiply', '/': 'divide', '**': 'power', 'sqr': 'square_root'}
         for i in range(len(splited_incoming)):
             try:
                 splited_incoming[i] = int(splited_incoming[i])
             except ValueError:
                 if splited_incoming[i] not in operations:
                     operation_check = False
+                else:
+                    splited_incoming[i] = op_dict[splited_incoming[i]]
 
         if symbol_check and operation_check:
             return splited_incoming

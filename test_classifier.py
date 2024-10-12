@@ -31,14 +31,14 @@ class TestClassifierWorks:
 
     @pytest.mark.parametrize(
         "input_str,expected", [
-            pytest.param('2 + 2', [2, '+', 2], id="[2, '+', 2]"),
-            pytest.param('2 - 2', [2, '-', 2], id="[2, '-', 2]"),
-            pytest.param('2 * 2', [2, '*', 2], id="[2, '*', 2]"),
-            pytest.param('2 / 2', [2, '/', 2], id="[2, '/', 2]"),
-            pytest.param('2 ** 2', [2, '**', 2], id="[2, '**', 2]"),
-            pytest.param('sqr 2', ['sqr', 2], id="['sqr', 2]"),
+            pytest.param('2 + 2', [2, 'add', 2], id="[2, '+', 2]"),
+            pytest.param('2 - 2', [2, 'substract', 2], id="[2, '-', 2]"),
+            pytest.param('2 * 2', [2, 'multiply', 2], id="[2, '*', 2]"),
+            pytest.param('2 / 2', [2, 'divide', 2], id="[2, '/', 2]"),
+            pytest.param('2 ** 2', [2, 'power', 2], id="[2, '**', 2]"),
+            pytest.param('sqr 2', ['square_root', 2], id="['sqr', 2]"),
             pytest.param('1 + 22 - 333 * 4444 ** 55555',
-                         [1, '+', 22, '-', 333, '*', 4444, '**', 55555],
+                         [1, 'add', 22, 'substract', 333, 'multiply', 4444, 'power', 55555],
                          id="[1, '+', 22, '-', 333, '*', 4444, '**', 55555]"),
         ]
     )
