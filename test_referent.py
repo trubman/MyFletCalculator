@@ -1,6 +1,6 @@
 import sys
 import pytest
-from referent import get_input
+from referent import get_input, get_output
 
 class TestReferentWorks:
 
@@ -10,8 +10,10 @@ class TestReferentWorks:
         result = get_input()
         assert input_value == result
 
-    def test_get_value_from_output(self, monkeypatch, capsys):
+    def test_get_value_from_output(self, capsys):
         input_value = '5'
-        monkeypatch.setattr('builtins.input', lambda: input_value)
-        result = get_input()
-        assert input_value == result
+        expected = '5\n'
+        get_output(input_value)
+        captured = capsys.readouterr()
+        result = captured.out
+        assert expected == result
