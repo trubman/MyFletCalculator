@@ -12,7 +12,7 @@ class Referent:
 
     @staticmethod
     def get_mathematical_expression():
-        Referent.do_output("Введите математическое выражение (через пробел):")
+        Referent.do_output("Введите математическое выражение (операторы и операнды через пробел):")
         Referent.do_output("(Доступные операции: +, -, *, /, **, sqr)")
         incoming = Referent.get_input()
         return incoming
@@ -20,3 +20,4 @@ class Referent:
     @staticmethod
     def get_expression_result(incoming, result):
         Referent.do_output(f"{incoming} = {result}")
+

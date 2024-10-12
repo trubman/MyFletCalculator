@@ -1,6 +1,5 @@
-import sys
-import pytest
 from referent import Referent
+
 
 class TestReferentWorks:
 
@@ -21,7 +20,7 @@ class TestReferentWorks:
         assert expected == result
 
     def test_get_mathematical_expression(self, monkeypatch, capsys):
-        expected_print = ("Введите математическое выражение (через пробел):\n"
+        expected_print = ("Введите математическое выражение (операторы и операнды через пробел):\n"
                           "(Доступные операции: +, -, *, /, **, sqr)\n")
         input_value = '2 + 2'
         monkeypatch.setattr('builtins.input', lambda: input_value)
@@ -31,7 +30,7 @@ class TestReferentWorks:
 
         assert (expected_print, input_value) == (result_print, result)
 
-    def test_get_mathematical_expression(self, capsys):
+    def test_get_get_expression_result(self, capsys):
         input_value = '2 + 2'
         input_result = 4
         expected_print = f"{input_value} = {input_result}\n"
