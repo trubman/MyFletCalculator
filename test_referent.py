@@ -9,3 +9,9 @@ class TestReferentWorks:
         monkeypatch.setattr('builtins.input', lambda: input_value)
         result = get_input()
         assert input_value == result
+
+    def test_get_value_from_output(self, monkeypatch, capsys):
+        input_value = '5'
+        monkeypatch.setattr('builtins.input', lambda: input_value)
+        result = get_input()
+        assert input_value == result
