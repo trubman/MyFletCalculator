@@ -31,4 +31,14 @@ class TestReferentWorks:
 
         assert (expected_print, input_value) == (result_print, result)
 
+    def test_get_mathematical_expression(self, capsys):
+        input_value = '2 + 2'
+        input_result = 4
+        expected_print = f"{input_value} = {input_result}\n"
+
+        Referent.get_expression_result()
+        result_print = capsys.readouterr().out
+
+        assert expected_print == result_print
+
 
