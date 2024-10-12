@@ -36,7 +36,7 @@ class TestReferentWorks:
         input_result = 4
         expected_print = f"{input_value} = {input_result}\n"
 
-        Referent.get_expression_result()
+        Referent.get_expression_result(input_value, input_result)
         result_print = capsys.readouterr().out
 
         assert expected_print == result_print

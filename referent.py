@@ -17,6 +17,6 @@ class Referent:
         incoming = Referent.get_input()
         return incoming
 
-    # @staticmethod
-    # def get_expression_result(incoming, result):
-    #     Referent.do_output(f"{incoming} = {result}")
+    @staticmethod
+    def get_expression_result(incoming, result):
+        Referent.do_output(f"{incoming} = {result}")
