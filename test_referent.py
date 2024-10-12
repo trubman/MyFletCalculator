@@ -21,12 +21,14 @@ class TestReferentWorks:
         assert expected == result
 
     def test_get_mathematical_expression(self, monkeypatch, capsys):
-        expected = ""
+        expected_print = ("Введите математическое выражение (через пробел):\n"
+                          "(Доступные операции: +, -, *, /, **, sqr)\n")
         input_value = '2 + 2'
         monkeypatch.setattr('builtins.input', lambda: input_value)
-        Referent.get_mathematical_expression()
-        captured = capsys.readouterr()
-        result = captured.out
-        assert expected == result
+
+        result = Referent.get_mathematical_expression()
+        result_print = capsys.readouterr().out
+
+        assert (expected_print, input_value) == (result_print, result)
 
 
