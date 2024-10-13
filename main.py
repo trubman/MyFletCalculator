@@ -2,9 +2,8 @@ import flet as ft
 from executor import Executor
 from flet_gui import CalculatorApp
 from tkinter_gui import tkinter_calc_gui
+from mode import MODE
 
-# CLI or FLET or TKI
-MODE = 'TKI'
 
 def main(page: ft.Page):
     page.title = "Неправильный калькулятор"

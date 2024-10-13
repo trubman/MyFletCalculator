@@ -1,5 +1,6 @@
 from calc import Calculator
 from classifier import Classifier
+from mode import MODE
 from referent import Referent
 
 
@@ -38,7 +39,8 @@ class Executor:
         if splited_incoming:
             self.splited_incoming = splited_incoming
         else:
-            self.set_cleaned_values()
+            if MODE == 'CLI':
+                self.set_cleaned_values()
 
     def do_math(self):
         medium_result = None

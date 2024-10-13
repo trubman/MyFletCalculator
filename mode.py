@@ -1,0 +1,2 @@
+# CLI or FLET or TKI
+MODE = 'TKI'

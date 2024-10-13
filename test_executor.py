@@ -65,6 +65,7 @@ class TestExecutorWorks:
         result_print = capsys.readouterr().out
 
         assert (result_print, result) == (expected_print, expected)
+        # в режиме не CLI не проходит
 
     @pytest.mark.parametrize(
         "splited_incoming,incoming,expected,expected_print", [
