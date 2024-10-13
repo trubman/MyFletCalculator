@@ -1,5 +1,3 @@
-from gzip import FHCRC
-
 import pytest
 from executor import Executor
 
